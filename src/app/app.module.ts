@@ -7,16 +7,15 @@ import { RootComponent } from './core/components/root/root.component';
 import { ChatsComponent } from './modules/chats/chats.component';
 import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 
-
 const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
 
 @NgModule({
-  imports: [ 
-    BrowserModule, 
-    AppRoutingModule, 
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
     SocketIoModule.forRoot(config),
-    AuthenticationModule, 
-    HomeModule
+    AuthenticationModule,
+    HomeModule,
   ],
   declarations: [RootComponent, ChatsComponent],
   bootstrap: [RootComponent],
