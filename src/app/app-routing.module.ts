@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DataModule } from './data/data.module';
 import { PageNotFoundComponent } from './core/components'; 
 import { NAVIGATION_ROUTES } from './core/constants/navigation-routes.constant';
 
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: '**', component: PageNotFoundComponent },
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true }), DataModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
