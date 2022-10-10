@@ -1,0 +1,63 @@
+<h1>Log in</h1>
+<!--<p-messages [hidden]="error === ''" severity="error">
+  <ng-template pTemplate>
+    {{ error }}
+  </ng-template>
+</p-messages>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <span class="p-float-label">
+    <input
+      id="email-input"
+      type="text"
+      pInputText
+      [(ngModel)]="user.email"
+      name="email"
+      required
+      email
+      #emailvar="ngModel"
+    />
+    <label for="email-input">Email</label>
+    <div
+      [hidden]="emailvar.valid || emailvar.pristine"
+      class="alert alert-danger"
+    >
+      Please insert a valid email
+    </div>
+  </span>
+  <br />
+  <span class="p-float-label">
+    <p-password
+      inputId="password"
+      [(ngModel)]="user.password"
+      [feedback]="false"
+      name="password"
+      required
+      #passwordvar="ngModel"
+    ></p-password>
+    <label for="password">Password</label>
+    <div
+      [hidden]="passwordvar.valid || passwordvar.pristine"
+      class="alert alert-danger"
+    >
+      Please insert a valid email
+    </div>
+  </span>
+  <br />
+  <p-button
+    type="submit"
+    label="Sign in"
+    [disabled]="!loginForm.form.valid"
+  ></p-button>
+  <br />
+
+  Haven't got an account?
+  <br />
+  <a
+    pButton
+    href="/signup"
+    style="text-decoration: none"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+    >Create an account</a
+  >
+</form>-->
