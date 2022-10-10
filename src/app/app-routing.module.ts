@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DataModule } from './data/data.module';
-import {
-  LogInPageComponent,
-  SignUpPageComponent,
-} from './modules/authentication/pages';
-import { ChatsComponent } from './modules/chats/chats.component';
-import { HomeComponent } from './modules/home/home.component';
+import { PageNotFoundComponent } from './core/components'; 
+import { NAVIGATION_ROUTES } from './core/constants/navigation-routes.constant';
+
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LogInPageComponent },
-  { path: 'signup', component: SignUpPageComponent },
-  {path: 'chats', component: ChatsComponent},
+  {
+    path: 'home',
+    loadChildren: () => import('./modules/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: NAVIGATION_ROUTES.AUTHENTICATION.BASE_PATH,
+    loadChildren: () =>
+      import('./modules/authentication/authentication.module').then(
+        (m) => m.AuthenticationModule
+      ),
+  },
+  { path: '**', component: PageNotFoundComponent },
 ];
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes), DataModule],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true }), DataModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

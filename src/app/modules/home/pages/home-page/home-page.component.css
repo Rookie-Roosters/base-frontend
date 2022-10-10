@@ -1,0 +1,17 @@
+.main-container {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: y mandatory;
+  margin: 0;
+}
+
+.main-container .section {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  scroll-snap-align: start;
+  width: 100%;
+}
