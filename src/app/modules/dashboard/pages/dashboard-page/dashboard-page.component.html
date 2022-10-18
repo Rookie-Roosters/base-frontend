@@ -1,2 +1,104 @@
-<p>dashboard-page works!</p>
-<router-outlet></router-outlet>
+<!-- start:mobile menu -->
+<div class="overflow-none flex w-full" [ngClass]="{ hidden: !showMobile }">
+  <div class="h-screen w-64 bg-opacity-90 bg-gray-300">
+    mobile menu
+    <button (click)="toggleMobile()" class="border h-8 px-2 ml-4 bg-gray-100 shadow rounded-full hover:bg-gray-200">
+      toggle mobile
+    </button>
+  </div>
+  <div class="w-full h-screen bg-opacity-80 bg-indigo-300"></div>
+</div>
+<!-- end:mobile menu -->
+
+<div class="flex fixed w-screen">
+  <div class="bg-base-200 flex-none w-80 h-screen">
+    <app-side-menu></app-side-menu>
+  </div>
+
+  <div class="bg-base-200 flex flex-col grow">
+    <nav class="flex-none h-20">
+      <app-navigation-bar></app-navigation-bar>
+    </nav>
+
+    <main class="bg-base-200 grow relative rounded">
+      <div class="overflow-auto absolute h-full w-full rounded">
+        <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- <div class="fixed left-0 top-0 bg-primary w-80 h-screen">
+  <app-side-menu></app-side-menu>
+</div>
+<div class="fixed left-80 top-0 bg-secondary flex-none">
+  <app-navigation-bar></app-navigation-bar>
+</div>
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<div class="grow">
+ 
+</div> -->
+
+<!-- <aside class="w-80 fixed top-0 left-0 h-screen lg:block hidden">
+  <app-side-menu></app-side-menu>
+</aside>
+
+<div class="ml-0 lg:ml-80">
+  <div class="flex-col">
+    <nav class="h-16 items-center top-0 bg-base-200">
+      <app-navigation-bar></app-navigation-bar>
+    </nav>
+    <div class="flex-1">
+      <main class="overflow-y-auto rounded bg-gray-200">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="flex flex-col h-screen">
+  <div class="flex flex-1 overflow-hidden">
+    <aside class="hidden sm:block overflow-y-auto w-72">
+      <app-side-menu></app-side-menu>
+    </aside>
+    <div class="flex flex-col flex-1">
+      <nav class="flex h-20 items-center">
+        <app-navigation-bar></app-navigation-bar>
+      </nav>
+      <main class="overflow-y-auto rounded-3xl shadow-inner shadow-base-300">
+        <div class="shadow-base-300">
+          <router-outlet></router-outlet>
+          <div class="h-80 bg-base-100">axssx</div>
+          <div class="h-80">axssx</div>
+          <div class="h-80">axssx</div>
+          <div class="h-80">axssx</div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="flex flex-col h-screen">
+  <nav class="flex bg-pink-500 h-16 items-center">
+    <app-navigation-bar></app-navigation-bar>
+  </nav>
+  <div class="flex bg-pink-300 h-8 items-center">Full Width Subheader</div>
+
+  <div class="flex flex-1 overflow-hidden">
+    <aside class="hidden sm:block overflow-y-auto w-72">
+      <app-side-menu></app-side-menu>
+    </aside>
+    <main class="flex flex-1 overflow-y-auto bg-gray-100">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <div class="flex bg-yellow-300">Footer</div>
+</div> -->
