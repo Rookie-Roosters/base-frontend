@@ -1,23 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { HomeModule } from './modules/home/home.module';
-import { AuthenticationModule } from './modules/authentication/authentication.module';
-import { RootComponent } from './core/components/root/root.component';
-import { ChatsComponent } from './modules/chats/chats.component';
-import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 
-const config: SocketIoConfig = { url: 'http://localhost:3001', options: {} };
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    SocketIoModule.forRoot(config),
-    AuthenticationModule,
-    HomeModule,
+    AppRoutingModule
   ],
-  declarations: [RootComponent, ChatsComponent],
-  bootstrap: [RootComponent],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
