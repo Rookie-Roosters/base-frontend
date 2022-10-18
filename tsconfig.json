@@ -18,10 +18,15 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ]
+    "lib": ["es2020", "dom"],
+    "paths": {
+      // Global
+      "@core/*": ["src/app/core/*"],
+      "@shared/*": ["src/app/shared/*"],
+
+      // Modules
+      "@authentication/*": ["src/app/modules/authentication/*"]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
