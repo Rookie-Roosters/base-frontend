@@ -1,6 +1,15 @@
 {
   "files.exclude": {
     ".angular": true,
-    ".vscode": true
+    ".vscode": true,
+    "node_modules": true,
+    "src\\polyfills.ts": true,
+    "src\\test.ts": true,
+    ".browserslistrc": true,
+    "karma.conf.js": true,
+    "package-lock.json": true,
+    "tsconfig.app.json": true,
+    "tsconfig.spec.json": true,
+    ".editorconfig": true
   }
 }

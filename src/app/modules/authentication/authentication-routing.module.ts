@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NAVIGATION_ROUTES } from '@core/constants';
+
 import { LogInComponent, SignUpComponent } from './components';
 import { AuthPageComponent } from './pages';
 

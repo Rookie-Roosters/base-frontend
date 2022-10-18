@@ -25,7 +25,9 @@
       "@shared/*": ["src/app/shared/*"],
 
       // Modules
-      "@authentication/*": ["src/app/modules/authentication/*"]
+      "@authentication/*": ["src/app/modules/authentication/*"],
+      "@dashboard/*": ["src/app/modules/dashboard/*"],
+      "@employees/*": ["src/app/modules/employees/*"]
     }
   },
   "angularCompilerOptions": {

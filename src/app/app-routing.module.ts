@@ -6,10 +6,11 @@ import { NAVIGATION_ROUTES } from '@core/constants';
 const routes: Routes = [
   {
     path: NAVIGATION_ROUTES.AUTHENTICATION.BASE_PATH,
-    loadChildren: () =>
-      import('@authentication/authentication.module').then(
-        (m) => m.AuthenticationModule
-      ),
+    loadChildren: () => import('@authentication/authentication.module').then((m) => m.AuthenticationModule),
+  },
+  {
+    path: NAVIGATION_ROUTES.DASHBOARD.BASE_PATH,
+    loadChildren: () => import('@dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   { path: '**', component: NotFoundComponent },
 ];
