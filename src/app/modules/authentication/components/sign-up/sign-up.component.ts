@@ -82,6 +82,6 @@ export class SignUpComponent implements OnInit {
     this.showAlert = true;
     setTimeout(() => {
       this.showAlert = false;
-    }, 3000);
+    }, 7000);
   }
 }
