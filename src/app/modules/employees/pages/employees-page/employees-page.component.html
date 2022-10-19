@@ -5,6 +5,20 @@
   </div>
 </div>
 
-<div class="grid grid-cols-3 gap-4">
-  <span *ngFor="let employee of employees">{{ employee }}</span>
-</div>
+<table class="table w-full">
+  <!-- head -->
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Correo</th>
+      <th>Nombre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <th>{{ employee.id }}</th>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.firstName }}</td>
+    </tr>
+  </tbody>
+</table>

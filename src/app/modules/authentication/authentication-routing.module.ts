@@ -8,7 +8,6 @@ import { AuthPageComponent } from './pages';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: NAVIGATION_ROUTES.AUTHENTICATION.LOG_IN,
     component: AuthPageComponent,
     children: [
       {
