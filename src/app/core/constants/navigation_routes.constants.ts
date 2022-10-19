@@ -6,10 +6,12 @@ export const NAVIGATION_ROUTES = {
   },
   DASHBOARD: {
     BASE_PATH: 'dashboard',
+    HOME: 'home',
     COMPANY: 'company',
     EMPLOYEES: 'employees',
     AUTOMATION: 'automation',
     BANKS: 'banks',
+    TRANSACTIONS: 'transactions',
   },
   AUTOMATION: {
     BASE_PATH: 'automation',
@@ -20,5 +22,5 @@ export const NAVIGATION_ROUTES = {
   },
   ERROR_PAGES: {
     NOT_FOUND: '404',
-  }
+  },
 };

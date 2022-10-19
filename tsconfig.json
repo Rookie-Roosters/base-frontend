@@ -30,6 +30,12 @@
       "@employees/*": ["src/app/modules/employees/*"],
       "@automation/*": ["src/app/modules/automation/*"],
       "@banks/*": ["src/app/modules/banks/*"],
+      "@suppliers/*": ["src/app/modules/suppliers/*"],
+      "@chats/*": ["src/app/modules/chats/*"],
+      "@company/*": ["src/app/modules/company/*"],
+      "@profile/*": ["src/app/modules/profile/*"],
+      "@transactions/*": ["src/app/modules/transactions/*"],
+      "@home/*": ["src/app/modules/home/*"]
     }
   },
   "angularCompilerOptions": {

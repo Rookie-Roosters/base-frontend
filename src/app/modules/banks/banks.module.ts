@@ -1,11 +1,12 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+import { BankTileComponent } from './components';
 import { BanksRoutingModule } from './banks-routing.module';
-import { AddBankComponent } from './pages/add-bank/add-bank.component';
+import { BanksPageComponent } from './pages';
 
 @NgModule({
-  declarations: [AddBankComponent],
-  imports: [FormsModule, ReactiveFormsModule, CommonModule, BanksRoutingModule],
+  declarations: [BankTileComponent, BanksPageComponent],
+  imports: [CommonModule, BanksRoutingModule],
 })
 export class BanksModule {}

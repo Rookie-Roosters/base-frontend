@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AutomationPageComponent } from './pages/automation-page/automation-page.component';
+
+import { AutomationPageComponent } from './pages';
 
 const routes: Routes = [
   {
