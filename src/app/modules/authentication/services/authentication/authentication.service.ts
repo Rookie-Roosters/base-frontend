@@ -34,7 +34,6 @@ export class AuthenticationService {
         confirmPassword: password,
       })
       .pipe((err) => {
-        console.log(err);
         return err;
       });
   }

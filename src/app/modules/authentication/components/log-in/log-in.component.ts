@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthenticationService } from '@authentication/services';
 import { validatePassword } from '@shared/utils';
 
@@ -9,7 +10,7 @@ import { validatePassword } from '@shared/utils';
   styleUrls: ['./log-in.component.css'],
 })
 export class LogInComponent implements OnInit {
-  constructor(public authService: AuthenticationService) {}
+  constructor(public authService: AuthenticationService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -28,11 +29,12 @@ export class LogInComponent implements OnInit {
         .logIn(this.logInForm.controls.email.value!, this.logInForm.controls.password.value!)
         .subscribe({
           next: (res) => {
-            alert(res);
+            localStorage.setItem('authToken', res.data!.authToken!);
+            localStorage.setItem('userId', res!.data!.user.id.toString());
+            this.router.navigateByUrl('/');
           },
           error: (err) => {
-            console.log(err);
-            this.showError(`${err.error.error}: ${err.error.messages}`);
+            this.showError(`Usuario o Contraseña Incorrecto`);
           },
         })
         .add(() => {
