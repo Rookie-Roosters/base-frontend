@@ -1,0 +1,36 @@
+<div class="grid place-content-center h-screen p-4">
+  <div class="card">
+    <div class="bg-base-100 prose p-10">
+      <h1 class="leading-normal h-5">Agregar un Banco</h1>
+    </div>
+    <form (submit)="addBank()">
+      <div class="col-span-2">
+        <label class="label">
+          <span class="label-text">Banco</span>
+        </label>
+        <select [formControl]="bankFormControl.controls.bank" class="input input-bordered w-full">
+          <option value="BBASE">Banco BASE</option>
+        </select>
+      </div>
+      <div class="col-span-2">
+        <label class="label">
+          <span class="label-text">Usuario</span>
+        </label>
+        <input type="text" class="input input-bordered w-full" [formControl]="bankFormControl.controls.account" />
+      </div>
+      <div class="col-span-2">
+        <label class="label">
+          <span class="label-text">Contraseña</span>
+        </label>
+        <input type="password" class="input input-bordered w-full" [formControl]="bankFormControl.controls.password" />
+      </div>
+      <div class="col-span-2">
+        <label class="label">
+          <span class="label-text">Token</span>
+        </label>
+        <input type="password" class="input input-bordered w-full" [formControl]="bankFormControl.controls.token" />
+      </div>
+      <button type="submit">Agregar Banco</button>
+    </form>
+  </div>
+</div>

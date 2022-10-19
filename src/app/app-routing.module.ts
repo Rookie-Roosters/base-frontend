@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from '@core/components';
 import { NAVIGATION_ROUTES } from '@core/constants';
 import { AuthGuard, NotAuthGuard } from '@core/guards/auth.guard';
+import { DashboardModule } from '@dashboard/dashboard.module';
 
 const routes: Routes = [
   {
@@ -16,6 +17,16 @@ const routes: Routes = [
     loadChildren: () => import('@dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
+    path: NAVIGATION_ROUTES.AUTOMATION.BASE_PATH,
+    canActivate: [AuthGuard],
+    loadChildren: () => import('@automation/automation.module').then((m) => m.AutomationModule),
+  },
+  {
+    path: NAVIGATION_ROUTES.BANKS.BASE_PATH,
+    canActivate: [AuthGuard],
+    loadChildren: () => import('@banks/banks.module').then((m) => m.BanksModule),
+  },
+  {
     path: '404',
     canActivate: [AuthGuard],
     component: NotFoundComponent,
@@ -27,7 +38,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

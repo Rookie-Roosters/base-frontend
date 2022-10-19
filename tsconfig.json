@@ -27,7 +27,9 @@
       // Modules
       "@authentication/*": ["src/app/modules/authentication/*"],
       "@dashboard/*": ["src/app/modules/dashboard/*"],
-      "@employees/*": ["src/app/modules/employees/*"]
+      "@employees/*": ["src/app/modules/employees/*"],
+      "@automation/*": ["src/app/modules/automation/*"],
+      "@banks/*": ["src/app/modules/banks/*"],
     }
   },
   "angularCompilerOptions": {

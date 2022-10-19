@@ -1,5 +1,11 @@
 {
   "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
     ".angular": true,
     ".vscode": true,
     "node_modules": true,
@@ -11,5 +17,6 @@
     "tsconfig.app.json": true,
     "tsconfig.spec.json": true,
     ".editorconfig": true
-  }
+  },
+  "hide-files.files": []
 }

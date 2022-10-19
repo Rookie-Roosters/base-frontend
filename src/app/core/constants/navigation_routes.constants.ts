@@ -11,6 +11,13 @@ export const NAVIGATION_ROUTES = {
     AUTOMATION: 'automation',
     BANKS: 'banks',
   },
+  AUTOMATION: {
+    BASE_PATH: 'automation',
+  },
+  BANKS: {
+    BASE_PATH: 'banks',
+    ADD: 'add',
+  },
   ERROR_PAGES: {
     NOT_FOUND: '404',
   }
