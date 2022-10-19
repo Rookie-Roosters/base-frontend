@@ -1,1 +1,57 @@
-<p>log-in works!</p>
+<div class="alert alert-error shadow-lg snackbar w-1/2 mx-auto inset-x-0" [ngClass]="{ show: showAlert }">
+  <div>
+    <i class="uil uil-exclamation-octagon"></i>
+    <span [innerText]="alertText"></span>
+  </div>
+</div>
+
+<div class="grid place-content-center h-screen p-4">
+  <div class="card">
+    <progress *ngIf="loadingForm" class="progress progress-primary"></progress>
+    <div class="bg-base-100 prose p-10">
+      <h1 class="leading-normal h-5">Ingresar</h1>
+      <span>
+        ¿Todavía no tienes una cuenta?
+        <a [routerLink]="['/authentication/sign-up']" class="link link-primary">Regístrate</a>
+      </span>
+
+      <form (ngSubmit)="submit()" [formGroup]="logInForm" class="form-control mt-8">
+        <label class="label">
+          <span class="label-text">Correo electrónico<span class="text-red-700">*</span></span>
+        </label>
+        <input
+          type="text"
+          formControlName="email"
+          class="input input-bordered w-full"
+          [ngClass]="{ inputError: emailError }"
+        />
+        <label class="label">
+          <span class="label-text-alt text-error" *ngIf="emailError">Ingresa un correo electrónico válido</span>
+        </label>
+        <label class="label">
+          <span class="label-text">Constraseña<span class="text-red-700">*</span></span>
+        </label>
+        <div class="input-group">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            formControlName="password"
+            class="input input-bordered w-full"
+            [ngClass]="{ inputError: passwordError.length != 0 }"
+          />
+          <button type="button" class="btn btn-square" (click)="showPassword = !showPassword">
+            <i class="uil" [ngClass]="showPassword ? 'uil-eye-slash' : 'uil-eye'"></i>
+          </button>
+        </div>
+        <label class="label">
+          <span class="label-text-alt text-error" *ngIf="passwordError.length != 0">
+            <ul class="text-error">
+              <li *ngFor="let message of passwordError">{{ message }}</li>
+            </ul>
+          </span>
+        </label>
+        <div class="divider"></div>
+        <button type="submit" class="btn btn-primary" [disabled]="!logInForm.valid || loadingForm">Continuar</button>
+      </form>
+    </div>
+  </div>
+</div>

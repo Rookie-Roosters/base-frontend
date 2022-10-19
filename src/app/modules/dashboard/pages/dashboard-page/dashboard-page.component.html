@@ -10,18 +10,19 @@
 </div>
 <!-- end:mobile menu -->
 
-<div class="flex fixed w-screen">
-  <div class="bg-base-200 flex-none w-80 h-screen">
+<div class="flex fixed w-screen h-screen">
+  <div class="flex-none w-80 hidden lg:block">
     <app-side-menu></app-side-menu>
   </div>
 
-  <div class="bg-base-200 flex flex-col grow">
+  <div class="grow flex flex-col">
     <nav class="flex-none h-20">
       <app-navigation-bar></app-navigation-bar>
     </nav>
 
-    <main class="bg-base-200 grow relative rounded">
-      <div class="overflow-auto absolute h-full w-full rounded">
+    <main class="grow relative">
+      <div class="overflow-auto absolute w-full h-full rounded-t-xl">
+        <router-outlet></router-outlet>
         <router-outlet></router-outlet>
         <router-outlet></router-outlet>
         <router-outlet></router-outlet>

@@ -1,1 +1,112 @@
-<p>sign-up works!</p>
+<div class="alert alert-error shadow-lg snackbar w-1/2 mx-auto inset-x-0" [ngClass]="{ show: showAlert }">
+  <div>
+    <i class="uil uil-exclamation-octagon"></i>
+    <span [innerText]="alertText"></span>
+  </div>
+</div>
+
+<div class="grid place-content-center h-screen p-4">
+  <div class="card">
+    <progress *ngIf="loadingForm" class="progress progress-primary"></progress>
+    <div class="bg-base-100 prose p-10">
+      <h1 class="leading-normal h-5">Registrarse</h1>
+      <span>
+        ¿Ya tienes una cuenta?
+        <a [routerLink]="['/authentication/log-in']" class="link link-primary">Ingresa aquí</a>
+      </span>
+
+      <form (ngSubmit)="submit()" [formGroup]="signUpForm" class="form-control mt-8 grid grid-cols-2 gap-4">
+        <div class="col-span-2">
+          <label class="label">
+            <span class="label-text">Correo electrónico<span class="text-red-700">*</span></span>
+          </label>
+          <input
+            type="text"
+            formControlName="email"
+            class="input input-bordered w-full"
+            [ngClass]="{ inputError: emailError }"
+          />
+          <label class="label">
+            <span class="label-text-alt text-error" *ngIf="emailError">Ingresa un correo electrónico válido</span>
+          </label>
+        </div>
+
+        <div>
+          <label class="label">
+            <span class="label-text">Nombre(s)<span class="text-red-700">*</span></span>
+          </label>
+          <input
+            type="text"
+            formControlName="firstName"
+            class="input input-bordered w-full"
+            [ngClass]="{ inputError: firstNameError }"
+          />
+          <label class="label">
+            <span class="label-text-alt text-error" *ngIf="firstNameError">Campo requerido</span>
+          </label>
+        </div>
+
+        <div>
+          <label class="label">
+            <span class="label-text">Apellido(s)<span class="text-red-700">*</span></span>
+          </label>
+          <input
+            type="text"
+            formControlName="lastName"
+            class="input input-bordered w-full"
+            [ngClass]="{ inputError: lastNameError }"
+          />
+          <label class="label">
+            <span class="label-text-alt text-error" *ngIf="lastNameError">Campo requerido</span>
+          </label>
+        </div>
+
+        <div>
+          <label class="label">
+            <span class="label-text">Contraseña<span class="text-red-700">*</span></span>
+          </label>
+          <div class="input-group">
+            <input
+              [type]="showPassword ? 'text' : 'password'"
+              formControlName="password"
+              class="input input-bordered w-full"
+              [ngClass]="{ inputError: passwordError.length != 0 }"
+            />
+            <button type="button" class="btn btn-square" (click)="showPassword = !showPassword">
+              <i class="uil" [ngClass]="showPassword ? 'uil-eye-slash' : 'uil-eye'"></i>
+            </button>
+          </div>
+          <label class="label">
+            <span class="label-text-alt text-error" *ngIf="passwordError.length != 0">
+              <ul class="text-error">
+                <li *ngFor="let message of passwordError">{{ message }}</li>
+              </ul>
+            </span>
+          </label>
+        </div>
+
+        <div>
+          <label class="label">
+            <span class="label-text">Confirmar contraseña<span class="text-red-700">*</span></span>
+          </label>
+          <div class="input-group">
+            <input
+              [type]="showConfirmPassword ? 'text' : 'password'"
+              formControlName="confirmPassword"
+              class="input input-bordered w-full"
+              [ngClass]="{ inputError: confirmPasswordError }"
+            />
+            <button type="button" class="btn btn-square" (click)="showConfirmPassword = !showConfirmPassword">
+              <i class="uil" [ngClass]="showConfirmPassword ? 'uil-eye-slash' : 'uil-eye'"></i>
+            </button>
+          </div>
+          <label class="label">
+            <span class="label-text-alt text-error" *ngIf="confirmPasswordError"> Las contraseñas no coinciden</span>
+          </label>
+        </div>
+        <div class="divider col-span-2"></div>
+        <button type="submit" class="btn col-span-2 btn-primary" [disabled]="!signUpFormIsValid">Continuar</button>
+      </form>
+    </div>
+  </div>
+</div>
