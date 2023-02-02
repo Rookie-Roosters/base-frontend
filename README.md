@@ -1,6 +1,7 @@
 # BaseFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+## Project information
+https://docs.google.com/presentation/d/15j2tGkcK27M2N1_FgpFqeMf-wLeVD-Jz3YNq72FYnYE/edit?usp=sharing
 
 ## Development server
 
